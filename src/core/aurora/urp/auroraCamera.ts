@@ -25,7 +25,6 @@ export default class AuroraCamera {
     this.speed = 15;
     this.zoom = { current: 1, max: 10, min: 0.1 };
 
-    console.log(window);
     window.onkeydown = (event: KeyboardEvent) => {
       const pressedKey = event.key === " " ? "space" : event.key;
       !event.repeat && cameraData.keyPressed.add(pressedKey);
