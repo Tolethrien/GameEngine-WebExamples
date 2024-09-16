@@ -3,7 +3,11 @@ import { exampleSpritePreload, exampleSpriteSetup } from "./exampleSprite";
 import { examplePhysicsPreload, examplePhysicsSetup } from "./examplePhysics";
 import { exampleLightsPreload, exampleLightsSetup } from "./exampleLights";
 import { getErrorPage } from "../exampleStuff/loading";
-const name: string = document.URL.split("/").at(-1)!;
+
+const params = new URLSearchParams(window.location.search);
+let name: string = "undefined";
+if (params.has("demo")) name = params.get("demo")!;
+console.log("currently on: ", name);
 switch (name) {
   case "sprite": {
     Engine.Initialize({
